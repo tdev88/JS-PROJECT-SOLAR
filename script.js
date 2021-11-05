@@ -1,16 +1,32 @@
 
 // Set variable to be planet name entered in to form
- let planet = document.getElementById("planet").value
+ let planet = document.getElementById("planet")
 
 // Get data according to form input
 function getPlanet() {
-  fetch('https://api.le-systeme-solaire.net/rest/bodies/')
-  .then(response => response.json())
-  .then(bodies => (bodies.find(element => element.englishName === planet)
+ return fetch('https://api.le-systeme-solaire.net/rest/bodies/') 
+  .then(Response => Response.json())
+  .then(data => data)
+}
+
+// Get Planets
+const mapPlanets = () => {
+  getPlanet()
+    .then(data => {
+      bodiesArray = data.bodies
+    const result = bodiesArray.find(element => element.englishName === planet.value)
+    console.log(result)
+    renderPlanet(result)
+  })
+}
+
 
 // Select DOM element and add event listener
-document.getElementById('getPlanet').addEventListener('click', getPlanet)
+document.getElementById('getPlanet').addEventListener('click', mapPlanets)
 
 // Manipulate DOM
-
+function renderPlanet(result) {
+  document.querySelector("h2#planet").innerText = result.englishName
+  document.querySelector("h3#isPlanet").innerText = result.isPlanet
+}  
 
