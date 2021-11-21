@@ -1,6 +1,5 @@
-
 // Set variable to be planet name entered in to form
- let planet = document.getElementById("planet")
+let planet = document.getElementById("planet")
 
 // Get data according to form input
 function getPlanet() {
@@ -25,8 +24,8 @@ const mapPlanets = () => {
 document.getElementById('getPlanet').addEventListener('click', mapPlanets)
 
 // Manipulate DOM
-function renderPlanet(result) {
-  document.querySelector("h2#planet").innerText = result.englishName
-  document.querySelector("h3#isPlanet").innerText = result.isPlanet
-}  
 
+function renderPlanet(result) {
+  document.querySelector("h5.modal-title").innerText = result.englishName
+  document.querySelector("h5#isPlanet").innerText = "Is Planet? " + result.isPlanet
+}
