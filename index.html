@@ -22,19 +22,27 @@
 
     </div>
 
-    <!-- Buttons trigger modal -->
-    <div class="container mt-3" >
+    <!-- Buttons -->
+    <div class="container mt-3">
 
-      <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#planetInfo" id="getPlanet">
-        Get Planet Info
+      <!-- Button Get Planet Info -->
+      <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#planetInfo" id="getPlanetInfo">
+        Is it a Planet?
       </button>
 
+      <!-- Button Planets Only-->
+      <button type="button" class="btn btn-primary me-3" id="isPlanetTrue">
+        List of Bodies Classed As Planets
+      </button>
+
+      <!-- Button Change Theme -->
       <button type="button" class="btn btn-primary me-3" data-bs-target="#exampleModal" id="changeTheme">
         Change Theme
       </button>
 
     </div>
   
+
     <!-- Modal planetInfo-->
     <div class="modal fade" id="planetInfo" tabindex="-1" >
       <div class="modal-dialog">
@@ -44,7 +52,7 @@
           </div>
           <div class="modal-body">
             ...
-            <h5 id="isPlanet"></h5>
+            <h5 id="isPlanet">Fetching data....Please Wait</h5>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -52,6 +60,12 @@
         </div>
       </div>
     </div>
+
+    <div class="container" id="planetsOnly">
+      ...
+    </div>
+
+
 
   </div>
   
